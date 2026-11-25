@@ -2,7 +2,7 @@ import path from 'node:path';
 import {bundle} from '@remotion/bundler';
 import {renderStill, selectComposition} from '@remotion/renderer';
 
-const frames = [20, 76, 130, 201, 267, 342, 405, 500];
+const frames = [20, 76, 130, 201, 267, 333, 342, 405, 447, 500];
 const serveUrl = await bundle({entryPoint: path.resolve('src/index.ts')});
 const composition = await selectComposition({
   serveUrl,

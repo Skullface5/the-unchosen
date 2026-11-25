@@ -21,7 +21,7 @@ export const HeartScene: React.FC<{frame: number; opacity: number}> = ({frame, o
             const p = ramp(frame, 72 + n * 21, 111 + n * 21);
             return <circle key={n} cx={540} cy={1040} r={150 + p * 490} fill="none" stroke={EMBER} strokeWidth={2 - p} strokeOpacity={(1 - p) * 0.35} />;
           })}
-          <g transform={`translate(540 1040) scale(${1 + beat * 0.035}) translate(-540 -1040)`}>
+          <g opacity={1 - ramp(frame, 103, 128)} transform={`translate(540 1040) scale(${1 + beat * 0.035}) translate(-540 -1040)`}>
             <path d={HEART} fill={EMBER} fillOpacity={0.018 + beat * 0.045} stroke="none" />
             <g clipPath="url(#heartClip)" opacity={0.34 * draw}>
               {Array.from({length: 18}, (_, i) => {
@@ -43,7 +43,7 @@ export const HeartScene: React.FC<{frame: number; opacity: number}> = ({frame, o
             <path d="M 534 914 C 512 1010 566 1060 532 1150 C 515 1197 527 1250 548 1334 M 535 1060 C 480 1040 443 1060 400 1104 M 535 1150 C 592 1120 641 1128 675 1080" fill="none" stroke={EMBER} strokeOpacity={0.48 * draw} strokeWidth={1.3} />
             <path d="M 367 1045 L 409 1045 L 431 1008 L 466 1100 L 501 1025 L 525 1045 L 584 1045 L 610 1008 L 642 1064 L 672 1045 L 716 1045" fill="none" stroke={PALE_EMBER} strokeWidth={2.2} strokeLinejoin="round" strokeLinecap="round" pathLength={1} strokeDasharray="1" strokeDashoffset={1 - ramp(frame, 48, 75)} filter="url(#softGlow)" />
           </g>
-          <Ember x={540} y={1040} size={90 + beat * 65} opacity={ramp(frame, 38, 64)} />
+          <Ember x={540} y={1040} size={90 + beat * 65 + dive * 240} opacity={ramp(frame, 38, 64)} />
         </g>
       </svg>
 

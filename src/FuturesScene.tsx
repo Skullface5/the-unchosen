@@ -90,8 +90,8 @@ export const FuturesScene: React.FC<{frame: number; opacity: number}> = ({frame,
         <div style={{fontFamily: 'SpaceGrotesk, sans-serif', fontSize: 15, letterSpacing: 5, color: MUTED}}>72 VISIBLE / ∞ UNSEEN</div>
         <div style={{width: 190, height: 1, background: MUTED, opacity: 0.35, marginTop: 18}} />
       </div>
-      <div style={{position: 'absolute', left: 82, bottom: 150, opacity: ramp(frame, 102, 119) * (1 - ramp(frame, 131, 143))}}>
-        <div style={{fontFamily: 'SpaceGrotesk, sans-serif', fontSize: 21, letterSpacing: 7, color: EMBER}}>AND THEN — YOU MOVE.</div>
+      <div style={{position: 'absolute', left: 82, bottom: 150, opacity: ramp(frame, 102, 119) * (1 - ramp(frame, 135, 147))}}>
+        <div style={{fontFamily: 'SpaceGrotesk, sans-serif', fontSize: 24, letterSpacing: 6, color: EMBER, textShadow: '0 0 18px rgba(242,170,104,.42)'}}>AND THEN — YOU MOVE.</div>
       </div>
     </AbsoluteFill>
   );

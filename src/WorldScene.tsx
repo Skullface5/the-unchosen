@@ -24,8 +24,8 @@ const ORBITS = Array.from({length: 7}, (_, i) => ({
 
 export const WorldScene: React.FC<{frame: number; opacity: number}> = ({frame, opacity}) => {
   const arrive = ramp(frame, 0, 37);
-  const depart = ramp(frame, 112, 145);
-  const scale = 3.1 - 2.16 * arrive + 0.12 * ramp(frame, 38, 105) + depart * 2.2;
+  const depart = ramp(frame, 102, 133);
+  const scale = 3.1 - 2.16 * arrive + 0.12 * ramp(frame, 38, 105) + depart * 5.4;
   const rotation = -9 + frame * 0.055;
   const orbitAngle = frame * 0.047;
   const ox = Math.cos(orbitAngle) * 485;
@@ -86,7 +86,7 @@ export const WorldScene: React.FC<{frame: number; opacity: number}> = ({frame, o
             })}
           </g>
           <Ember x={emberX} y={emberY} size={66} opacity={ramp(frame, 35, 52)} />
-          <Ember x={540} y={960} size={95} opacity={0.7 + 0.3 * Math.sin(frame * 0.11)} />
+          <Ember x={540} y={960} size={95 + depart * 620} opacity={0.7 + 0.3 * Math.sin(frame * 0.11)} />
           <path d="M 540 960 C 700 870 820 1000 980 870" fill="none" stroke={PALE_EMBER} strokeOpacity={0.22 * arrive} strokeWidth={1} filter="url(#softGlow)" />
         </g>
       </svg>
