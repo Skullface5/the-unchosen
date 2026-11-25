@@ -1,0 +1,24 @@
+{
+  "name": "the-unchosen",
+  "version": "1.0.0",
+  "private": true,
+  "description": "An original single-line motion film about possibility.",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "render": "remotion render src/index.ts TheUnchosen out/the-unchosen.mp4 --codec h264 --crf 16"
+  },
+  "dependencies": {
+    "@remotion/bundler": "4.0.484",
+    "@remotion/cli": "4.0.484",
+    "@remotion/renderer": "4.0.484",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "remotion": "4.0.484"
+  },
+  "devDependencies": {
+    "@types/react": "18.3.28",
+    "@types/react-dom": "18.3.7",
+    "typescript": "5.9.3"
+  }
+}
